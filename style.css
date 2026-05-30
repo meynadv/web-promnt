@@ -1,0 +1,982 @@
+/* ===== VARIABEL WARNA ===== */
+    :root {
+      --neon-purple: #bf00ff;
+      --neon-blue: #00cfff;
+      --neon-pink: #ff0080;
+      --neon-green: #00ff88;
+      --dark: #050510;
+      --dark2: #0a0a1f;
+      --glass: rgba(255, 255, 255, 0.04);
+      --glass-border: rgba(191, 0, 255, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--dark);
+      color: #e0e0ff;
+      font-family: 'Rajdhani', sans-serif;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* ===== CURSOR CUSTOM ===== */
+    .cursor {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--neon-purple);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.15s ease, border-color 0.3s;
+      box-shadow: 0 0 10px var(--neon-purple);
+    }
+
+    .cursor-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--neon-blue);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+      box-shadow: 0 0 8px var(--neon-blue);
+    }
+
+    /* ===== CANVAS PARTIKEL ===== */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(5, 5, 16, 0.7);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .nav-logo {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.1rem;
+      background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #a0a0cc;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--neon-blue);
+      text-shadow: 0 0 12px var(--neon-blue);
+    }
+
+    /* ===== SECTION UMUM ===== */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 100px 2rem;
+    }
+
+    .section-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--neon-purple);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .highlight-purple {
+      color: var(--neon-purple);
+      text-shadow: 0 0 20px var(--neon-purple), 0 0 40px var(--neon-purple);
+    }
+
+    .highlight-blue {
+      color: var(--neon-blue);
+      text-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
+    }
+
+    /* ===== GLASSMORPHISM CARD ===== */
+    .glass-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      padding: 2rem;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 30px rgba(191, 0, 255, 0.3), 0 0 60px rgba(0, 207, 255, 0.1);
+      border-color: var(--neon-purple);
+    }
+
+    /* ==============================
+       SECTION 1: HERO / PERKENALAN
+    ============================== */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+    }
+
+    /* ── FOTO PROFIL ──
+       Ganti src di tag <img class="profile-photo">
+       dengan link/path foto kamu
+    ─────────────────── */
+    .profile-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--neon-purple);
+      box-shadow: 0 0 30px var(--neon-purple), 0 0 60px rgba(191, 0, 255, 0.4);
+      margin: 0 auto 2rem;
+      display: block;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-14px)
+      }
+    }
+
+    .hero-greeting {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.9rem;
+      letter-spacing: 6px;
+      color: var(--neon-blue);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      animation: fadeUp 0.8s 0.2s both;
+    }
+
+    /* ── NAMA ──
+       Ganti "NAMA KAMU" di HTML dengan nama lengkap kamu
+    ─────────── */
+    .hero-name {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(2.5rem, 8vw, 5.5rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue), var(--neon-pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s 0.4s both;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.8s 0.6s both;
+    }
+
+    .badge {
+      padding: 0.4rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      font-family: 'Space Mono', monospace;
+      border: 1px solid;
+    }
+
+    .badge-purple {
+      border-color: var(--neon-purple);
+      color: var(--neon-purple);
+      background: rgba(191, 0, 255, 0.08);
+    }
+
+    .badge-blue {
+      border-color: var(--neon-blue);
+      color: var(--neon-blue);
+      background: rgba(0, 207, 255, 0.08);
+    }
+
+    .badge-pink {
+      border-color: var(--neon-pink);
+      color: var(--neon-pink);
+      background: rgba(255, 0, 128, 0.08);
+    }
+
+    .hero-info {
+      font-size: 1.15rem;
+      color: #c0c0e0;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      animation: fadeUp 0.8s 0.8s both;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      border: 2px solid var(--neon-purple);
+      color: var(--neon-purple);
+      border-radius: 8px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s;
+      animation: fadeUp 0.8s 1s both;
+    }
+
+    .hero-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--neon-purple);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .hero-btn:hover {
+      color: #fff;
+    }
+
+    .hero-btn:hover::before {
+      transform: scaleX(1);
+    }
+
+    .hero-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===========================
+       SECTION 2: QUOTE MOTIVASI
+    =========================== */
+    #quote {
+      padding: 60px 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(191, 0, 255, 0.05), rgba(0, 207, 255, 0.05));
+      border-top: 1px solid rgba(191, 0, 255, 0.2);
+      border-bottom: 1px solid rgba(0, 207, 255, 0.2);
+    }
+
+    .quote-mark {
+      font-size: 5rem;
+      line-height: 0.5;
+      color: var(--neon-purple);
+      opacity: 0.3;
+      font-family: serif;
+    }
+
+    /* ── KATA MOTIVASI ──
+       Ganti teks di dalam .quote-text di HTML
+    ─────────────────── */
+    .quote-text {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(1.1rem, 3vw, 1.8rem);
+      font-weight: 700;
+      max-width: 800px;
+      margin: 0.5rem auto;
+      background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.5;
+    }
+
+    .quote-author {
+      margin-top: 1rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--neon-blue);
+      letter-spacing: 3px;
+    }
+
+    /* ===== FOTO PRIBADI ===== */
+    #fotopribadi {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .pribadi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+
+    .pribadi-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--glass-border);
+      cursor: pointer;
+    }
+
+    .pribadi-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .pribadi-card:hover .pribadi-img {
+      transform: scale(1.08);
+    }
+
+    .pribadi-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+      padding: 1rem 0.8rem 0.6rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .pribadi-card:hover .pribadi-overlay {
+      opacity: 1;
+    }
+
+    .pribadi-caption {
+      color: #fff;
+      font-size: 0.8rem;
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .pribadi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ====================
+       SECTION 4: HOBI
+    ==================== */
+    #hobi {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hobi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-top: 3rem;
+    }
+
+    .hobi-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2rem 1rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      cursor: default;
+    }
+
+    .hobi-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(0, 207, 255, 0.3);
+      border-color: var(--neon-blue);
+    }
+
+    .hobi-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+      display: block;
+      filter: drop-shadow(0 0 8px var(--neon-blue));
+    }
+
+    .hobi-name {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.85rem;
+      color: var(--neon-blue);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hobi-desc {
+      font-size: 0.85rem;
+      color: #8080aa;
+      margin-top: 0.4rem;
+      line-height: 1.5;
+    }
+
+    /* ========================
+       SECTION 5: GALERI FOTO
+    ======================== */
+    #galeri {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .galeri-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    @media(max-width: 700px) {
+      .galeri-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ── FOTO GALERI ──
+       Ganti src="..." di setiap <img> dalam .galeri-item
+    ──────────────────── */
+    .galeri-item {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(191, 0, 255, 0.2);
+      aspect-ratio: 1;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .galeri-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s, filter 0.3s;
+      filter: brightness(0.8) saturate(1.3);
+    }
+
+    .galeri-item:hover img {
+      transform: scale(1.08);
+      filter: brightness(1) saturate(1.6);
+    }
+
+    .galeri-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(191, 0, 255, 0.5), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+    }
+
+    .galeri-item:hover .galeri-overlay {
+      opacity: 1;
+    }
+
+    .galeri-caption {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+
+    /* ====================
+       SECTION 6: KONTAK
+    ==================== */
+    #kontak {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .kontak-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .kontak-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 2rem;
+      border-radius: 10px;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-decoration: none;
+      border: 1px solid;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .kontak-btn:hover {
+      transform: translateY(-4px);
+    }
+
+    /* ── LINK KONTAK ──
+       Edit href="" dengan akun sosmed/kontakmu
+    ─────────────────── */
+    .kb-wa {
+      border-color: var(--neon-green);
+      color: var(--neon-green);
+      background: rgba(0, 255, 136, 0.05);
+    }
+
+    .kb-wa:hover {
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+    }
+
+    .kb-ig {
+      border-color: var(--neon-pink);
+      color: var(--neon-pink);
+      background: rgba(255, 0, 128, 0.05);
+    }
+
+    .kb-ig:hover {
+      box-shadow: 0 0 20px rgba(255, 0, 128, 0.4);
+    }
+
+    .kb-em {
+      border-color: var(--neon-blue);
+      color: var(--neon-blue);
+      background: rgba(0, 207, 255, 0.05);
+    }
+
+    .kb-em:hover {
+      box-shadow: 0 0 20px rgba(0, 207, 255, 0.4);
+    }
+
+    .kontak-desc {
+      color: #9090bb;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-top: 1rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(191, 0, 255, 0.15);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: #444466;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer span {
+      background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+    }
+
+    /* ===== SCAN LINE EFFECT ===== */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 2px);
+      pointer-events: none;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+      border-radius: 999px;
+      margin: 1rem 0 2rem;
+      box-shadow: 0 0 12px var(--neon-purple);
+    }
+
+    /* ===== ANIMASI ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s, transform 0.7s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== LIGHTBOX ===== */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(5, 5, 16, 0.95);
+      align-items: center;
+      justify-content: center;
+    }
+
+    #lightbox.active {
+      display: flex;
+    }
+
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 12px;
+      border: 1px solid var(--neon-purple);
+      box-shadow: 0 0 40px var(--neon-purple);
+    }
+
+    #lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-size: 2rem;
+      color: var(--neon-purple);
+      cursor: pointer;
+      font-family: 'Orbitron', monospace;
+    }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--dark);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--neon-purple);
+      border-radius: 4px;
+    }
+
+    @media(max-width:768px) {}
+      nav {
+        padding: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+      }
+
+      /* ====================
+   SECTION: MUSIC PLAYER
+==================== */
+      #playlist {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .player-box {
+        background: var(--glass);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 2rem;
+        margin-top: 2.5rem;
+        backdrop-filter: blur(12px);
+      }
+
+      .player-now {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .player-disc {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        flex-shrink: 0;
+        box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
+        transition: transform 0.3s;
+      }
+
+      .player-disc.spinning {
+        animation: spin 4s linear infinite;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .player-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .player-title {
+        font-family: 'Orbitron', monospace;
+        font-size: 1rem;
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .player-artist {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.78rem;
+        color: var(--neon-blue);
+        margin-top: 0.3rem;
+      }
+
+      /* Progress bar */
+      .player-progress {
+        margin-bottom: 1.2rem;
+      }
+
+      .progress-track {
+        width: 100%;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 999px;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.4rem;
+      }
+
+      .progress-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+        border-radius: 999px;
+        pointer-events: none;
+        transition: width 0.1s linear;
+        box-shadow: 0 0 8px var(--neon-purple);
+      }
+
+      .progress-times {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.7rem;
+        color: #6060aa;
+      }
+
+      /* Controls */
+      .player-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .ctrl-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #8080cc;
+        font-size: 1.3rem;
+        transition: color 0.2s, transform 0.2s;
+        padding: 0.3rem;
+      }
+
+      .ctrl-btn:hover {
+        color: var(--neon-blue);
+        transform: scale(1.15);
+      }
+
+      .ctrl-play {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+        border: none;
+        cursor: pointer;
+        font-size: 1.4rem;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .ctrl-play:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px rgba(191, 0, 255, 0.8);
+      }
+
+      /* Volume */
+      .player-volume {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .player-volume span {
+        font-size: 1rem;
+        color: #6060aa;
+      }
+
+      .volume-slider {
+        -webkit-appearance: none;
+        appearance: none;
+        flex: 1;
+        height: 3px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        outline: none;
+        cursor: pointer;
+      }
+
+      .volume-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--neon-purple);
+        box-shadow: 0 0 8px var(--neon-purple);
+        cursor: pointer;
+      }
+
+      /* Playlist list */
+      body {
+        background: #0f0f0f;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Container playlist */
+      .playlist-container {
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+      }
+
+      /* Item lagu */
+      .playlist-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid #ff4fd8;
+        color: white;
+
+        padding: 18px;
+        margin: 15px 0;
+
+        border-radius: 18px;
+
+        font-size: 20px;
+        letter-spacing: 1px;
+
+        cursor: pointer;
+
+        transition: all 0.3s ease;
+
+        box-shadow:
+          0 0 10px #ff4fd8,
+          0 0 20px rgba(255, 79, 216, 0.5);
+      }
+
+      /* Efek saat cursor diarahkan */
+      .playlist-item:hover {
+
+        transform: scale(1.05);
+
+        background: #ff4fd8;
+
+        color: white;
+
+        box-shadow:
+          0 0 15px #ff4fd8,
+          0 0 30px #ff4fd8,
+          0 0 60px #ff4fd8,
+          0 0 100px #ff4fd8;
+      }

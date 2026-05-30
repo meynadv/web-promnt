@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio – SRMA 24 Kediri</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Space+Mono&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- CANVAS PARTIKEL -->
+  <canvas id="particles"></canvas>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <div id="lightbox-close">✕</div>
+    <img id="lightbox-img" src="" alt="foto">
+  </div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <!-- ══ GANTI "MY.PORTO" dengan singkatan namamu ══ -->
+    <div class="nav-logo">MY.PORTO</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#Foto Pribadi">Foto Pribadi</a></li>
+      <li><a href="#hobi">Hobi</a></li>
+      <li><a href="#playlist">Playlist</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- ════════════════════════════════
+     SECTION 1 — PERKENALAN / HERO
+════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-inner">
+
+      <!-- ══ GANTI src dengan link/path foto profilmu ══ -->
+      <img class="profile-photo" src="pesiar.jpg" alt="Foto Profil" />
+
+      <p class="hero-greeting">✦ Halo, Selamat Datang di Portofolioku ✦</p>
+
+      <!-- ══ GANTI "NAMA KAMU" dengan nama lengkapmu ══ -->
+      <h1 class="hero-name">MEY NASILA</h1>
+
+      <!-- ══ EDIT umur di badge pertama ══ -->
+      <div class="hero-badges">
+        <span class="badge badge-purple">⚡ 17 Tahun</span>
+        <span class="badge badge-blue">📚 Pelajar </span>
+        <span class="badge badge-pink">🏫 SRMA 24 Kediri</span>
+      </div>
+
+      <!-- ══ EDIT deskripsi singkat tentang dirimu ══ -->
+      <p class="hero-info">
+        Halo! Aku adalah seorang pelajar di <strong style="color:var(--neon-blue)">SRMA 24 Kediri</strong>,
+        berumur <strong style="color:var(--neon-purple)">17 tahun</strong>,
+        dengan semangat belajar yang tinggi dan mimpi yang besar. Aku percaya setiap langkah kecil
+        membawa kita lebih dekat ke tujuan. ✨
+      </p>
+
+      <a href="#kontak" class="hero-btn"><span>Hubungi Aku</span></a>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+     SECTION 2 — MOTIVASI / QUOTE
+════════════════════════════════ -->
+  <section id="quote">
+    <div class="quote-mark">"</div>
+
+    <!-- ══ GANTI dengan kata motivasi favoritmu ══ -->
+    <p class="quote-text reveal">
+      "Pendidikan adalah tiket ke masa depan, karena hari esok dimiliki oleh orang-orang yang mempersiapkannya hari
+      ini."
+    </p>
+
+    <!-- ══ GANTI nama penulis quote ══ -->
+    <p class="quote-author reveal">— Nelson Mandela</p>
+  </section>
+
+  <!-- ============================================
+  | SECTION 3 — FOTO PRIBADI
+  ============================================ -->
+
+  <section id="fotopribadi">
+    <p class="section-tag reveal">✦ Personal</p>
+    <h2 class="section-title reveal"><span class="highlight-purple">Foto</span> Pribadi</h2>
+    <div class="divider reveal"></div>
+
+    <div class="pribadi-grid">
+
+      <!-- == FOTO 1 == -->
+      <div class="pribadi-card reveal">
+        <img class="pribadi-img" src="pesiar.jpg" alt="Foto Pribadi 1" />
+        <div class="pribadi-overlay">
+          <p class="pribadi-caption">pesiar</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 2 == -->
+      <div class="pribadi-card reveal">
+        <img class="pribadi-img" src="kejur.jpg" alt="Foto Pribadi 2" />
+        <div class="pribadi-overlay">
+          <p class="pribadi-caption">aku</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 3 == -->
+      <div class="pribadi-card reveal">
+        <img class="pribadi-img" src="sunsrise.jpeg" alt="Foto Pribadi 3" />
+        <div class="pribadi-overlay">
+          <p class="pribadi-caption">love</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 4 == -->
+      <div class="pribadi-card reveal">
+        <img class="pribadi-img" src="jln prongos.jpeg" alt="Foto Pribadi 4" />
+        <div class="pribadi-overlay">
+          <p class="pribadi-caption">my self</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ════════════════════════════════
+     SECTION 4 — HOBI
+════════════════════════════════ -->
+  <section id="hobi">
+    <p class="section-tag reveal">✦ Interest</p>
+    <h2 class="section-title reveal"><span class="highlight-blue">Hobi</span> & Minat</h2>
+    <div class="divider reveal"></div>
+
+    <!-- ══ Edit emoji, nama, deskripsi sesuai hobimu ══ -->
+    <div class="hobi-grid">
+
+      <div class="hobi-card reveal">
+        <span class="hobi-icon">🎵</span>
+        <p class="hobi-name">semua</p>
+        <p class="hobi-desc">hobiku ada banyak sesuai dengan kemampuan dan kemauanku untuk berimajinasi atau melakukan hal yang aku sukai dan pastinya yang aku bisa.</p>
+      </div>
+
+      <div class="hobi-card reveal">
+        <span class="hobi-icon">📚</span>
+        <p class="hobi-name">Membaca</p>
+        <p class="hobi-desc">Membaca buku, novel, dan artikel menarik.</p>
+      </div>
+
+      <div class="hobi-card reveal">
+        <span class="hobi-icon">🎨</span>
+        <p class="hobi-name">Seni</p>
+        <p class="hobi-desc">Menggambar dan bereksperimen dengan kreativitas.</p>
+      </div>
+
+      <div class="hobi-card reveal">
+        <span class="hobi-icon">⚽</span>
+        <p class="hobi-name">Olahraga</p>
+        <p class="hobi-desc">Aktif bergerak dan menjaga kesehatan tubuh.</p>
+      </div>
+
+      <!-- ══ TAMBAH HOBI: copy salah satu .hobi-card di atas ══ -->
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+   SECTION — MUSIC PLAYER / PLAYLIST
+════════════════════════════════ -->
+<section id="playlist">
+  <p class="section-tag reveal">✦ Vibes</p>
+  <h2 class="section-title reveal"><span class="highlight-purple">Playlist</span> Favoritku</h2>
+  <div class="divider reveal"></div>
+
+  <div class="player-box reveal">
+
+    <!-- Now Playing -->
+    <div class="player-now">
+      <div class="player-disc" id="playerDisc">🎵</div>
+      <div class="player-info">
+        <p class="player-title" id="playerTitle">Pilih lagu untuk diputar</p>
+        <p class="player-artist" id="playerArtist">— — —</p>
+      </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="player-progress">
+      <div class="progress-track" id="progressTrack">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-times">
+        <span id="timeCurrent">0:00</span>
+        <span id="timeDuration">0:00</span>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="player-controls">
+      <button class="ctrl-btn" id="btnPrev" title="Sebelumnya">⏮</button>
+      <button class="ctrl-play" id="btnPlay">▶</button>
+      <button class="ctrl-btn" id="btnNext" title="Berikutnya">⏭</button>
+    </div>
+
+    <!-- Volume -->
+    <div class="player-volume">
+      <span>🔈</span>
+      <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+      <span>🔊</span>
+    </div>
+
+    <!-- List -->
+    <p class="playlist-list-title">🎶 Daftar Lagu</p>
+    <div class="playlist-list" id="playlistList"></div>
+
+  </div>
+
+  <!-- Audio element -->
+  <audio id="audioPlayer"></audio>
+</section>
+  <!-- ============================================
+  | SECTION — GALERI BERSAMA TEMAN
+  ============================================ -->
+
+  <section id="galeri">
+    <p class="section-tag reveal">✦ Memories</p>
+    <h2 class="section-title reveal"><span class="highlight-purple">Galeri</span> Bersama Teman</h2>
+    <div class="divider reveal"></div>
+
+    <div class="galeri-grid">
+
+      <!-- == FOTO 1 == -->
+      <div class="galeri-item reveal">
+        <img src="SR.jpg" alt="Foto Bersama Teman 1" />
+        <div class="galeri-overlay">
+          <p class="galeri-caption">KELUARGA BESAR SRMA 24 KEDIRI</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 2 == -->
+      <div class="galeri-item reveal">
+        <img src="blokc.jpeg" alt="Foto Bersama Teman 2" />
+        <div class="galeri-overlay">
+          <p class="galeri-caption">KELUARGA BLOK C</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 3 == -->
+      <div class="galeri-item reveal">
+        <img src="bsherly.jpeg" alt="Foto Bersama Teman 3" />
+        <div class="galeri-overlay">
+          <p class="galeri-caption">SENJA BU SHERLY</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 4 == -->
+      <div class="galeri-item reveal">
+        <img src="balivia.jpeg" alt="Foto Bersama Teman 4" />
+        <div class="galeri-overlay">
+          <p class="galeri-caption">CIWI-CIWI X-3</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 5 == -->
+      <div class="galeri-item reveal">
+        <img src="riyaya.jpeg" alt="Foto Bersama Teman 5" />
+        <div class="galeri-overlay">
+          <p class="galeri-caption">HARI RAYA IDUL FITRI</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 6 == -->
+      <div class="galeri-item reveal">
+        <img src="satya.jpeg" alt="Foto Bersama Teman 6" />
+        <div class="galeri-overlay">
+          <p class="galeri-caption">RENCANG-RENCANG</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 7 == -->
+      <div class="galeri-item reveal">
+        <img src="newyear.jpg" alt="Foto Bersama Teman 7" />
+        <div class="galeri-overlay">
+          <p class="galeri-caption">ALUMNI IX-E</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 8 == -->
+      <div class="galeri-item reveal">
+        <img src="buber.jpeg" alt="Foto Bersama Teman 8" />
+        <div class="galeri-overlay">
+          <p class="galeri-caption">BUBER ALUMNI IX-E</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 9 == -->
+      <div class="galeri-item reveal">
+        <img src="X-3.jpg" alt="Foto Bersama Teman 9" />
+        <div class="galeri-overlay">
+          <p class="galeri-caption">KELUARGA BESAR X-3</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 10 == -->
+      <div class="galeri-item reveal">
+        <img src="bpk & emak & aku.jpeg" alt="Foto Bersama Teman 10" />
+        <div class="galeri-overlay">
+          <p class="galeri-caption">BAPAK & EMAK</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 11 == -->
+      <div class="galeri-item reveal">
+        <img src="ayhnmm.jpg" alt="Foto Bersama Teman 11" />
+        <div class="galeri-overlay">
+          <p class="galeri-caption">AYAH & MAMA</p>
+        </div>
+      </div>
+
+      <!-- == FOTO 12 == -->
+      <div class="galeri-item reveal">
+        <img src="btedjo.jpg" alt="Foto Bersama Teman 12" />
+        <div class="galeri-overlay">
+          <p class="galeri-caption">BU SUTEDJO</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+     SECTION 6 — KONTAK
+════════════════════════════════ -->
+  <section id="kontak">
+    <p class="section-tag reveal">✦ Contact</p>
+    <h2 class="section-title reveal"><span class="highlight-blue">Hubungi</span> Aku</h2>
+    <div class="divider reveal" style="margin:1rem auto 2rem;"></div>
+
+    <!-- ══ Edit teks deskripsi kontak ══ -->
+    <p class="kontak-desc reveal">
+      Punya pertanyaan, ingin berkolaborasi, atau sekadar menyapa?<br>
+      Jangan ragu untuk menghubungiku melalui salah satu platform di bawah ini! 💬
+    </p>
+
+    <div class="kontak-links reveal">
+
+      <!-- ══ GANTI nomor WA: 628 + nomormu (tanpa 0 depan) ══ -->
+      <a href="https://wa.me/6208xxxxxxxxxx" class="kontak-btn kb-wa" target="_blank">
+        <span>📱</span> 087761580895
+      </a>
+
+      <!-- ══ GANTI username Instagram kamu ══ -->
+      <a href="https://instagram.com/username_kamu" class="kontak-btn kb-ig" target="_blank">
+        <span>📸</span> myselaa_ajaa
+      </a>
+
+      <!-- ══ GANTI email kamu ══ -->
+      <a href="mailto:emailkamu@gmail.com" class="kontak-btn kb-em">
+        <span>📧</span> meynasela9@gmail.com
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <!-- ══ GANTI nama ══ -->
+    <p>© 2026 <span>Mey Nasila</span> · SRMA 24 Kediri · Made with 💜</p>
+  </footer>
+
+  <!-- ════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════ -->
+  <script>
+    /* CURSOR CUSTOM */
+    const cursor = document.getElementById('cursor');
+    const dot = document.getElementById('cursorDot');
+    let mx = 0, my = 0, cx = 0, cy = 0;
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.left = mx - 3 + 'px'; dot.style.top = my - 3 + 'px';
+    });
+    (function anim() {
+      cx += (mx - cx) * 0.12; cy += (my - cy) * 0.12;
+      cursor.style.left = cx - 9 + 'px'; cursor.style.top = cy - 9 + 'px';
+      requestAnimationFrame(anim);
+    })();
+
+    /* PARTIKEL CANVAS */
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let W, H, pts = [];
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    resize(); window.addEventListener('resize', resize);
+    const COLORS = ['#bf00ff', '#00cfff', '#ff0080', '#00ff88'];
+    for (let i = 0; i < 70; i++) pts.push({
+      x: Math.random() * W, y: Math.random() * H,
+      vx: (Math.random() - .5) * .4, vy: (Math.random() - .5) * .4,
+      r: Math.random() * 2 + 1,
+      c: COLORS[Math.floor(Math.random() * COLORS.length)],
+      a: Math.random() * .6 + .2
+    });
+    function drawPts() {
+      ctx.clearRect(0, 0, W, H);
+      pts.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1;
+        if (p.y < 0 || p.y > H) p.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.c; ctx.globalAlpha = p.a;
+        ctx.shadowColor = p.c; ctx.shadowBlur = 10;
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+      pts.forEach((a, i) => pts.slice(i + 1).forEach(b => {
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < 120) {
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = 'rgba(191,0,255,' + (1 - d / 120) * .15 + ')';
+          ctx.lineWidth = .5; ctx.stroke();
+        }
+      }));
+      requestAnimationFrame(drawPts);
+    }
+    drawPts();
+
+    /* SCROLL REVEAL */
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => obs.observe(el));
+
+    /* LIGHTBOX GALERI */
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    function openLightbox(el) {
+      lbImg.src = el.querySelector('img').src;
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    document.getElementById('lightbox-close').onclick = () => {
+      lb.classList.remove('active'); document.body.style.overflow = '';
+    };
+    lb.addEventListener('click', e => {
+      if (e.target === lb) { lb.classList.remove('active'); document.body.style.overflow = ''; }
+    });
+
+    /* TYPING EFEK NAMA */
+    const nameEl = document.querySelector('.hero-name');
+    const fullName = nameEl.textContent;
+    nameEl.textContent = '';
+    let ni = 0;
+    function typeName() {
+      if (ni <= fullName.length) { nameEl.textContent = fullName.slice(0, ni); ni++; setTimeout(typeName, 80); }
+    }
+    setTimeout(typeName, 900);
+    /* ── MUSIC PLAYER ──
+   Edit array SONGS di bawah:
+   - file : nama file .mp3 (taruh satu folder dengan index.html)
+   - title: judul lagu
+   - artist: nama artis
+   - emoji: ikon yang muncul di disc
+──────────────────── */
+const SONGS = [
+  { file: 'dj-campuran-mashup-barat-vol-2-speed-up-slowed-viral-tiktok-cocok-buat-santai-yang-kalian-cari-ytshorts.savetube.vip.mp4', title: 'DJ Campuran Mashup', artist: 'Various Artist', emoji: '🎵' },
+  { file: 'dj-sou-favela-x-figurinha-tren-dance-brazil-viral-tiktok-terbaru-2026-128-ytshorts.savetube.me.mp3', title: 'Favela X Figurin', artist: 'DJ Sou', emoji: '🎸' },
+  { file: 'dia-sency-ft-tenxi-lyric-video-128-ytshorts.savetube.me.mp3', title: 'Dia Sency ft Tenxi', artist: 'Sency & Tenxi', emoji: '🎤' },
+  { file: 'anggis-devaki-dirimu-yang-dulu-lyric-video-lirik-lagu-trending-terbaru-128-ytshorts.savetube.me.mp3', title: 'Judul Lagu 4', artist: 'devaki', emoji: '🎹' },
+];
+
+const audio       = document.getElementById('audioPlayer');
+const btnPlay     = document.getElementById('btnPlay');
+const btnPrev     = document.getElementById('btnPrev');
+const btnNext     = document.getElementById('btnNext');
+const disc        = document.getElementById('playerDisc');
+const titleEl     = document.getElementById('playerTitle');
+const artistEl    = document.getElementById('playerArtist');
+const progressFill= document.getElementById('progressFill');
+const progressTrack=document.getElementById('progressTrack');
+const timeCurrent = document.getElementById('timeCurrent');
+const timeDuration= document.getElementById('timeDuration');
+const volumeSlider= document.getElementById('volumeSlider');
+const playlistList= document.getElementById('playlistList');
+
+let currentIdx = 0;
+let isPlaying  = false;
+
+function fmtTime(s) {
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60).toString().padStart(2,'0');
+  return `${m}:${sec}`;
+}
+
+function renderList() {
+  playlistList.innerHTML = '';
+  SONGS.forEach((s, i) => {
+    const div = document.createElement('div');
+    div.className = 'pl-item' + (i === currentIdx ? ' active' : '');
+    div.innerHTML = `
+      <span class="pl-num">${i + 1}</span>
+      <span class="pl-emoji">${s.emoji}</span>
+      <div class="pl-meta">
+        <p class="pl-name">${s.title}</p>
+        <p class="pl-singer">${s.artist}</p>
+      </div>
+      <span class="pl-dur" id="dur-${i}">-:--</span>`;
+    div.addEventListener('click', () => { loadSong(i); playAudio(); });
+    playlistList.appendChild(div);
+  });
+}
+
+function loadSong(idx) {
+  currentIdx = idx;
+  const s = SONGS[idx];
+  audio.src = s.file;
+  titleEl.textContent  = s.title;
+  artistEl.textContent = s.artist;
+  disc.textContent     = s.emoji;
+  progressFill.style.width = '0%';
+  timeCurrent.textContent  = '0:00';
+  timeDuration.textContent = '0:00';
+  renderList();
+}
+
+function playAudio() {
+  audio.play();
+  isPlaying = true;
+  btnPlay.textContent = '⏸';
+  disc.classList.add('spinning');
+}
+
+function pauseAudio() {
+  audio.pause();
+  isPlaying = false;
+  btnPlay.textContent = '▶';
+  disc.classList.remove('spinning');
+}
+
+btnPlay.addEventListener('click', () => {
+  if (!audio.src || audio.src === window.location.href) { loadSong(0); playAudio(); return; }
+  isPlaying ? pauseAudio() : playAudio();
+});
+
+btnPrev.addEventListener('click', () => {
+  loadSong((currentIdx - 1 + SONGS.length) % SONGS.length);
+  if (isPlaying) playAudio();
+});
+
+btnNext.addEventListener('click', () => {
+  loadSong((currentIdx + 1) % SONGS.length);
+  if (isPlaying) playAudio();
+});
+
+audio.addEventListener('timeupdate', () => {
+  if (!audio.duration) return;
+  const pct = (audio.currentTime / audio.duration) * 100;
+  progressFill.style.width = pct + '%';
+  timeCurrent.textContent  = fmtTime(audio.currentTime);
+  timeDuration.textContent = fmtTime(audio.duration);
+});
+
+progressTrack.addEventListener('click', e => {
+  const rect = progressTrack.getBoundingClientRect();
+  const pct  = (e.clientX - rect.left) / rect.width;
+  audio.currentTime = pct * audio.duration;
+});
+
+audio.addEventListener('ended', () => {
+  loadSong((currentIdx + 1) % SONGS.length);
+  playAudio();
+});
+
+volumeSlider.addEventListener('input', () => {
+  audio.volume = volumeSlider.value;
+});
+audio.volume = 0.7;
+
+audio.addEventListener('loadedmetadata', () => {
+  const durEl = document.getElementById(`dur-${currentIdx}`);
+  if (durEl) durEl.textContent = fmtTime(audio.duration);
+});
+
+renderList();
+  </script>
+
+</body>
+
+</html>
